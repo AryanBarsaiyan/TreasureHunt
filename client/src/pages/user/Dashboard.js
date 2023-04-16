@@ -3,6 +3,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 import styles from "../HomeStyle.module.css";
 
 
@@ -11,7 +12,19 @@ export default function Dashboard() {
  
   const [score, setScore] = useState(0);
 
-  
+  const getScore = async () => {
+    try{
+      const res = await axios.get(`${process.env.REACT_APP_API}/score/user`);
+      console.log(res.data);
+      setScore(res.data.score);
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    getScore();
+  }, []);
 
  const navigate = useNavigate();
   return (
@@ -43,15 +56,11 @@ export default function Dashboard() {
         (async () => {
           
           try {
-            const res = await axios.get(`${process.env.REACT_APP_API}/score/user`);
-            console.log(res.data);
+            const que = score + 1;
 
-            setScore(res.data.score); 
-            const que = res.data.score + 1;
-
-            if(res.data.score === 0){
+            if(que === 8){
               
-              navigate('/dashboard/que1');
+              navigate('/score/user');
             }
             else
             navigate(`/dashboard/que${que}`);
@@ -63,7 +72,7 @@ export default function Dashboard() {
 
         
         
-      )} class="btn btn-dark" type="button"> {score===0 ? "start" : "resume"} </button>
+      )} class="btn btn-dark" type="button"> {score===0 ? "Start" : score===7 ? "See Result" : "Resume"} </button>
       </div>
       </div>
     </>
