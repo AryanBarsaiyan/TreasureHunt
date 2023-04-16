@@ -1,5 +1,5 @@
-# TreasureHunt-elitmus
-# Soft Skills Puzzle
+# Soft Skills Puzzle-eLitmus
+### Live on (https://treasurehunt-npui.onrender.com/)
 
 Welcome to the Soft Skills Puzzle, an interactive game designed to assess users' soft skills, such as attention to detail, perseverance, and curiosity. Users must solve a series of clues to progress through the game and reach the final treasure. The game is hosted on a cloud-based website and can be accessed from any internet-connected device.
 
