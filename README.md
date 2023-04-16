@@ -7,7 +7,7 @@ Welcome to the Soft Skills Puzzle, an interactive game designed to assess users'
 
 Our game is built using the following technologies:
 
-- HTML5/CSS3 for website structuring and styling
+- React.js/Bootstrap for website structuring and styling
 - JavaScript for creating interactive elements, such as clues and animations
 - Node.js for server-side scripting and handling user data
 - Express.js for creating a RESTful API to handle user authentication and data storage
@@ -27,10 +27,10 @@ Our game includes the following features:
 
 ## Deployment
 
-Our game is deployed on a cloud-hosted website, such as GitHub.io or Netlify, to ensure accessibility and ease of use for users. To deploy the game locally, users will need to install Node.js and MongoDB, clone the repository, and run the commands "npm install" and "npm start" to start the server and access the game website at http://localhost:3000/.
+Our game is deployed on a cloud-hosted website, such as GitHub.io or Netlify, to ensure accessibility and ease of use for users. To deploy the game locally, users will need to install Node.js and MongoDB, clone the repository, and run the commands "npm install" and "npm start" to start the server and access the game website at https://treasurehunt-npui.onrender.com/.
 
 ## Credits
 
-Our Soft Skills Puzzle was designed and created by [Your Name] as a project for [Your Institution/Company]. All clues and puzzles are original and not copied from the internet.
+Our Soft Skills Puzzle was designed and created by Aryan Barsaiyan as a project for eLitmus. All clues and puzzles are original and not copied from the internet.
 
 Thank you for checking out our project!
