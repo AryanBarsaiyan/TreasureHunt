@@ -1,0 +1,61 @@
+.home{
+    background: url("https://res.cloudinary.com/ddkj8wsjy/image/upload/v1681585349/suhash-villuri-fk9r2Ec5bSI-unsplash_gjdu9b.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 82.7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    opacity: 0.8;
+
+
+}
+
+.box{
+   
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 60px;
+    height: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    opacity: 1;
+
+}
+.box1{
+    border: #b41f1f 2px solid;
+    margin-left: 45%;
+    background-color: rgb(252, 248, 252);
+
+  
+
+}
+.home2{
+    background: url("https://res.cloudinary.com/ddkj8wsjy/image/upload/v1681651686/patrick-tomasso-QMDap1TAu0g-unsplash_kpbsaj.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 82.7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.8;
+
+
+}
+.home3{
+        background: url("https://res.cloudinary.com/ddkj8wsjy/image/upload/v1681651686/patrick-tomasso-QMDap1TAu0g-unsplash_kpbsaj.jpg") no-repeat center center fixed;
+        
+    background-size: cover;
+    height: 82.7vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.8;
+
+
+}
