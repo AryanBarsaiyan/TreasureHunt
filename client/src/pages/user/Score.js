@@ -55,11 +55,10 @@ export default function  Score() {
   const [auth, setAuth] = useAuth();
   return (
     <div className= {styles.home2}>
-      <br></br>
       <h1 className='text-center text-white'> Score </h1>
-      <Card className="container mt-3" style={{ width: '28rem'}}>
+      <Card className="container mt-3" style={{ width: '20rem'}}>
       <img class="card-img-top" src="https://res.cloudinary.com/ddkj8wsjy/image/upload/v1681658619/engin-akyurt-bPiuY2ZSlvU-unsplash_kxurf8.jpg" alt="Card image cap"></img>
-      <Card.Body >
+      <Card.Body className="container"  style={{ width: 'auto'}}>
         <Card.Title className="fs-2  my-2"><HourglassOutlined/><i my-3 mx-5> { auth?.user?.username?.toUpperCase()}</i></Card.Title>
         <Card.Subtitle className="mb-2 text-muted fs-3 mt-3"><i>Your Score :</i> <i>{score} </i> </Card.Subtitle>
         <Card.Subtitle className="mb-2 text-muted fs-3 mt-2"><i>Total Attempt :</i> <i>{total_attempted} </i> </Card.Subtitle>

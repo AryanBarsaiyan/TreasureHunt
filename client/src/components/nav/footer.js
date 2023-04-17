@@ -7,7 +7,7 @@ function footer() {
         <footer >
             <Container fluid>
             <Row >
-            <Col className="bg-primary text-white text-center py-4">
+            <Col className="bg-dark text-white text-center py-4">
                 Copyright &copy; Treasure-Hunt by A.B.
             </Col>
             </Row>

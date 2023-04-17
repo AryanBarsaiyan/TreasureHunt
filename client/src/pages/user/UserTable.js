@@ -20,8 +20,8 @@ function UserTable({ users }) {
     
     <br></br>
 
-     <div className='container mt-3 bg-white border-5 border-black rounded '>
-        <Table striped bordered hover>
+     <div className='container mt-3 bg-white border-5 border-black rounded table-responsive'>
+        <Table striped bordered hover  className='table'>
       <thead>
         <tr>
           <th>Rank</th>

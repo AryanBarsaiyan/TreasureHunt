@@ -29,13 +29,13 @@ export default function Dashboard() {
  const navigate = useNavigate();
   return (
     <>
-      <div className= {styles.home3}>
-      <Card className="container-fluid d-flex mt-3" style={{ width: "50rem" }}>
+      <div className= {styles.home4}>
+      <Card className="container-fluid d-flex mt-3 container" style={{ width: "auto"}}>
         <Card.Body>
           <Card.Title className="fw-bold justify-content center text-center">Instructions</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
           </Card.Subtitle>
-          <Card.Text className="mt-3 " style={{fontSize:"25px"}}>
+          <Card.Text className="mt-3 ">
            <p>1. Welcome to the adventure game.</p>
            <p>2. You will need to solve clues to discover the location of the next clue.</p>
             <p>3. Each clue may require different problem-solving techniques and can lead you to different sources such as texts, videos, 3D animations, games, links, or anything else.</p>
@@ -73,6 +73,7 @@ export default function Dashboard() {
         
         
       )} class="btn btn-dark" type="button"> {score===0 ? "Start" : score===7 ? "See Result" : "Resume"} </button>
+      <br/>
       </div>
       </div>
     </>

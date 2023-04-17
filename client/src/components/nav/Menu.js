@@ -1,104 +1,78 @@
-
-import { NavLink , Link} from "react-router-dom"
-import { useAuth } from "../../context/auth"
-import { useNavigate } from "react-router-dom"
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import {DingdingOutlined, UserOutlined ,UserAddOutlined,ReadOutlined} from '@ant-design/icons';
-import footer from "./footer";
-
-export default function Menu(){
+import {
+    Navbar,
+    Nav,
+    Container,
+    NavDropdown,
+    Badge,
+    Form,
+    DropdownButton,
+    Dropdown,
+    Button,
+    InputGroup,
+  } from "react-bootstrap";
+  import { LinkContainer } from "react-router-bootstrap";
+  import { NavLink, Link } from "react-router-dom"
+  import { useAuth } from "../../context/auth"
+  import { useNavigate } from "react-router-dom";
+  import { DingdingOutlined, UserOutlined, UserAddOutlined, ReadOutlined } from '@ant-design/icons';
+  import { useEffect, useState } from "react";
+  
+  export default function Menu() {
     // hooks
     const [auth, setAuth] = useAuth();
     const navigate = useNavigate();
-
+  
     const logout = () => {
-        setAuth({...auth, token: null, user: null});
-        localStorage.removeItem("auth");
-        navigate("/login");
+      setAuth({ ...auth, token: null, user: null });
+      localStorage.removeItem("auth");
+      navigate("/login");
     }
-
+  
     return (
-        <Navbar className="nav nav-tabs bg-primary d-flex justify-content-between shadow-sm" sticky="top"  expand = "lg">
-         <Container fluid>
-          
-         {/* <Navbar.Brand style={{color: "white"}}  to="/">Treasure-Hunt</Navbar.Brand> */}
-
-        {!auth?.user ?  <Nav
-            className="me-auto my-2 my-lg-0 nav-item "
-            style={{ maxHeight: '100px' }}
-           
-          >
-          <DingdingOutlined className=" my-2" />
-            <Link className='mx-4 '  style={{color: "white" , textDecoration:"none"}} to="/">Tresure-Hunt</Link>
-            <ReadOutlined className="mx-2 my-1"/> 
-            <Link     style={{color: "white" , textDecoration:"none" }} to="/about">About</Link>
-
-
-          </Nav> : <Nav className="nav-item ">
-            <Link className='mx-4 '  style={{color: "white" , textDecoration:"none", margin: "15px"}} to="/">Tresure-Hunt</Link>
-            <Link style={{color: "white" , textDecoration:"none", margin: "15px"}} to="/about">About</Link>
-            <Link  style={{color: "white" , textDecoration:"none", margin: "15px"}} to={`/dashboard`}> {"Dashboard"} </Link>
-            <Link  style={{color: "white" , textDecoration:"none", margin: "15px"}} to={`/score/${auth?.user?.role===1 ? "admin":"user"}`}> {auth?.user?.role===1 ? "Leaderboard" : "Your Status"} </Link>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container fluid>
+          <LinkContainer to="/">
+            <Navbar.Brand href="/" className="text-decoration-none">Tresure-Hunt</Navbar.Brand>
+            {/* <Navbar.Brand href="/"> <img  src={require('./moretobuy.png')} alt="logo" border="0" width="120px" height="40px" /></Navbar.Brand> */}
+          </LinkContainer>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            {!auth?.user ? <Nav
+              className="me-auto  nav-item "
+            >
+  
+              <LinkContainer to="/about"><Nav.Link className="text-decoration-none" >About</Nav.Link></LinkContainer>
+  
+  
+            </Nav> : <Nav className="me-auto nav-item ">
+              <LinkContainer to="/about"><Nav.Link className="text-decoration-none">About</Nav.Link></LinkContainer>
+              <LinkContainer to={`/dashboard`}><Nav.Link className="text-decoration-none"> {"Dashboard"} </Nav.Link></LinkContainer>
+              <LinkContainer to={`/score/${auth?.user?.role === 1 ? "admin" : "user"}`}><Nav.Link className="text-decoration-none"> {auth?.user?.role === 1 ? "Leaderboard" : "Your Status"} </Nav.Link></LinkContainer>
             </Nav>}
-
-          {!auth?.user ? (
-                    <div className="nav-item ">
-                    <UserOutlined />
-                        <Button variant="outline-light"  className="mx-2" >
-                        
-                            <NavLink className="nav-link" to="/login">
-                            
-                            <i className="bi bi-search text-dark ">
-                             LOGIN</i>
-                            </NavLink>
-                        </Button>
-                        <UserAddOutlined />
-                        <Button variant="outline-light" className="mx-2" >
-                        <NavLink className="nav-link" to="/register">
-                        <i className="bi bi-search text-dark">REGISTER</i>
-                                
-                            </NavLink>
-                        </Button>
-                    </div>
-
-                      
-                ): (
-                    <div className="dropdown d-flex flex-column nav-item "> 
-                        <>
-                        
-                            <a style={{color: "white" , margin: "5px"}} >
-                            <UserOutlined className="mx-2 my-0 " />  { auth?.user?.username?.toUpperCase() }
-                            </a>
-                           
-                        </>
-                                {/* <NavLink className="nav-link pointer" 
-                                    to={`/dashboard/${auth?.user?.role===1 ? "admin" : "user"}`}>
-                                    Dashboard
-                                </NavLink> */}
-                            
-
-                                    {/* <a style={{color: "white"}}  onClick={logout} >
-                                        Logout
-                                    </a>  */}
-                                    <Button variant="outline-light" className="mx-2" onClick={logout} >
-                                    <i className="bi bi-search text-dark"></i>
-                                        Logout
-                                    </Button>
-                           
-                     
-                    </div>
-                )}
-
-
-            </Container>   
-           
-        </Navbar>
-       
-      
-
+  
+            {!auth?.user ? (
+              <>
+                  <LinkContainer to="/login">
+                    <Nav.Link className="text-light  mx-3 text-decoration-none">Login</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/register">
+                    <Nav.Link className="text-light text-decoration-none">Register</Nav.Link>
+                  </LinkContainer>
+              </>
+  
+  
+            ) : (
+              <NavDropdown title={`${auth?.user?.username?.toUpperCase()}`} id="collasible-nav-dropdown" className="text-light dropdown mx-5">
+                <NavDropdown.Item onClick={logout}>
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            )}
+  
+  
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     );
-    
-}
+  
+  }

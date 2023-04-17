@@ -44,7 +44,7 @@ export default function Que6() {
   return (
     <div className={styles.home2}>
     <div className="container mt-3">
-      <Card style={{ width: "30rem" }}>
+      <Card style={{ width: "auto" }}>
         <Card.Body>
           <Card.Title>Problem-6</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">Statement</Card.Subtitle>
