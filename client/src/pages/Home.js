@@ -11,7 +11,7 @@ function Home() {
         
         <div  className={styles.box}>
         <h1 className='text-bold' style={{color: "white"}}>Welcome to Treasure-Hunt</h1>
-        <h3 className='text-bold'  style={{color: "white"}}>Get ready to follow the clues and uncover the prize in a thrilling treasure hunt!</h3>
+        <h3 className='text-bold text-center'  style={{color: "white"}}>Get ready to follow the clues and uncover the prize in a thrilling treasure hunt!</h3>
            {auth?.user ? 
             <button className={styles.box1 }
               style={{maxWidth: "120px"}}
