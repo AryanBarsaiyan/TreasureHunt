@@ -11,7 +11,7 @@ export const que1 = async (req, res) => {
 
         user.end_time=Date.now();
 
-       if(answer==="flagCES{“ER23_fl4T”}"){
+       if(answer==="ER23_fl4T"){
             if(user.que1===false){
                 user.score=user.score+1;
                 user.que1=true;
@@ -44,7 +44,7 @@ export const que2 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="flagCES{gotITrightHERE}"){
+       if(answer==="gotITrightHERE"){
             if(user.que2===false){
                 user.score=user.score+1;
                 user.que2=true;
@@ -76,7 +76,7 @@ export const que3 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="flagCES{G U L A B I A N K H E}"){
+       if(answer==="G U L A B I A N K H E"){
             if(user.que3===false){
                 user.score=user.score+1;
                 user.que3=true;
@@ -107,7 +107,7 @@ export const que4 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="flagCES{will-o'-the-wisps}"){
+       if(answer==="will-o'-the-wisps"){
             if(user.que4===false){
                 user.score=user.score+1;
                 user.que4=true;
@@ -139,7 +139,7 @@ export const que5 = async (req, res) => {
         user.end_time=Date.now();
        const {answer} = req.body;
 
-       if(answer==="flagCES{CORRETPARITY}"){
+       if(answer==="CORRETPARITY"){
             if(user.que5===false){
                 user.score=user.score+1;
                 user.que5=true;
@@ -169,7 +169,7 @@ export const que6 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="flagCES{JOEYRGMGRGCBPB}"){
+       if(answer==="JOEYRGMGRGCBPB"){
             if(user.que6===false){
                 user.score=user.score+1;
                 user.que6=true;
@@ -202,7 +202,7 @@ export const que7 = async (req, res) => {
 
        const {answer} = req.body;
 
-       if(answer==="flagCES{Elon Musk}"){
+       if(answer==="Elon Musk"){
            if(user.que7===false){
                 user.end_time=Date.now();
                 user.score=user.score+1;
